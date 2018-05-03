@@ -2,6 +2,10 @@ package com.shail.ir.crawlers;
 
 import java.io.IOException;
 
+/**
+ * Driver that calls crawlers to get crawled urls and their HTMLs
+ * @author Shail Shah
+ */
 public class Driver {
 	public static void main(String[] args) throws IOException {
 		int maxUrlCount = 1000;

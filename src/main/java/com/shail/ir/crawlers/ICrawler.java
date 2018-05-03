@@ -3,6 +3,11 @@ package com.shail.ir.crawlers;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * A class implementing ICrawler is able to crawl a seed page
+ * and able to obtain urls and their HTMLs
+ * @author Shail Shah
+ */
 public interface ICrawler {
 	/**
 	 * Crawl the web, starting from the url
