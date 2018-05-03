@@ -9,7 +9,7 @@ public class Driver {
 		String seedUrl =  "https://en.wikipedia.org/wiki/Sustainable_energy";
 		String keyword = "solar";
 		Page seedPage = new Page(seedUrl, 1);
-		int timeOutSeconds = 0;
+		int timeOutSeconds = 1;
 
 		Crawler crawler = new BreathFirstCrawler(maxUrlCount, maxDepth, timeOutSeconds);
 		crawler.crawl(seedPage, keyword, true);
