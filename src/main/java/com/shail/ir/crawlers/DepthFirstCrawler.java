@@ -41,12 +41,12 @@ public class DepthFirstCrawler extends Crawler {
 		try{
 			TimeUnit.SECONDS.sleep(timeOutSeconds);
 			String filename = "data/crawlers/" + ((isFocused)?"focused " : "unfocused ")+"dfs-"+ urls.size();
-			 savePage(Jsoup.connect(url).get().html(), filename);
+			savePage(Jsoup.connect(url).get().html(), filename);
 
-			Elements elements = Jsoup.connect(url).get().select("a[abs:href*=en.wikipedia.org/wiki/]");
-			for (Element element : elements)
-				if(isCrawlable(element, keyword, isFocused))
-					crawl(new Page(removeFragment(element.attr("abs:href")),
+			Elements anchorElements = Jsoup.connect(url).get().select("a[abs:href*=en.wikipedia.org/wiki/]");
+			for (Element anchorElmenet : anchorElements)
+				if(isCrawlable(anchorElmenet, keyword, isFocused))
+					crawl(new Page(removeFragment(anchorElmenet.attr("abs:href")),
 							depth + 1),
 							keyword,
 							isFocused);

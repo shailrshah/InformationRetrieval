@@ -15,7 +15,7 @@ public class Driver {
 		Page seedPage = new Page(seedUrl, 1);
 		int timeOutSeconds = 1;
 
-		Crawler crawler = new BreathFirstCrawler(maxUrlCount, maxDepth, timeOutSeconds);
+		ICrawler crawler = new BreathFirstCrawler(maxUrlCount, maxDepth, timeOutSeconds);
 		crawler.crawl(seedPage, keyword, true);
 		crawler.exportURLs("result/crawlers/BFS-Focused-URLS.txt");
 		crawler.resetCrawler();

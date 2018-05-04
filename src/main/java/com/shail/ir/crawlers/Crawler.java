@@ -82,15 +82,15 @@ public abstract class Crawler implements ICrawler{
 
 	/**
 	 * Is the given element crawlable?
-	 * @param element an HTML element
+	 * @param anchorElmenet an HTML anchor element
 	 * @param keyword a search keyword
 	 * @param focused true iff focused search
 	 * @return true iff the given element is crawlable
 	 */
-	boolean isCrawlable(Element element, String keyword, boolean focused) {
-		String elementText = element.text().toLowerCase();
-		String elementRelUrl = removeFragment(element.attr("href")).toLowerCase();
-		String elementClass = element.attr("class");
+	boolean isCrawlable(Element anchorElmenet, String keyword, boolean focused) {
+		String elementText = anchorElmenet.text().toLowerCase();
+		String elementRelUrl = removeFragment(anchorElmenet.attr("href")).toLowerCase();
+		String elementClass = anchorElmenet.attr("class");
 
 		return !elementRelUrl.contains(":") &&
 				!elementClass.equals("image") &&
